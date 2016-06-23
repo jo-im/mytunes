@@ -6,7 +6,7 @@ var SongModel = Backbone.Model.extend({
     // console.log('Entering the play method and this is', this);
     // console.log('what is this', this.trigger('play', this));
     this.trigger('play', this);
-    console.log('that', this.trigger('play', this));
+    // console.log('that', this.trigger('play', this));
   },
 
   enqueue: function() {
@@ -14,11 +14,11 @@ var SongModel = Backbone.Model.extend({
   },
 
   dequeue: function() {
-
+    this.trigger('dequeue', this);
   },
 
   ended: function() {
-
+    this.trigger('ended', this);
   }
 
 });
